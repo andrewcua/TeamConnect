@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<title>TeamConnect</title>
+
+<link rel="stylesheet" type="text/css" href="bootstrap.min.css">
+<script src="boostrap.min.js"></script>
+
+<!-- The upper two links are bootstraps for CSS and Javascript -->
+
+
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+
+</head>
+<body>
+
+
+<!-- Navbar content --> 
+<%= render 'home/navbar' %>
+<!-- Navbar content --> 
+
+
+<div class="container">
+<div class="container-fluid">
+ <%= yield %>
+ <%= render 'home/new_question_form' %>
+
+
+  <!-- %= render 'home/new_answer_form' % -->
+
+
+</div> 
+</div>
+
+  <%= render 'home/footer' %>
+
+
+</body>
+</html>

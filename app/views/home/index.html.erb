@@ -1,0 +1,35 @@
+<div class="well">
+	<h4>The team is an essential component of any organization like Ideas. It's fueled by the people that runs it. </h4>
+	<p>This Q&amp;A site to Ideaspace dedicated to connecting team mates and enabling collaborations to happen. </p>
+</div>
+
+
+
+<!-- Media Content --> 
+<% @questions.each do |q| %>
+	<div class="media">
+	  <div class="media-left">
+	    <a href="">
+	      <img class="media-object" src="<%= q.gravatar %>" alt="...">
+	    </a>
+	  </div>
+	  	<div class="media-body">
+		    <h4 class="media-heading"> <%= q.email %> asked: </h4>
+		    <div><%= time_ago_in_words q.created_at %> ago </div>
+		    <%= q.body %>
+
+	  	  <div><a href="<%= question_path(q) %>" class="btn btn-primary btn-xs" role="button">View Answer</a>
+
+	    </div>
+
+	   </div>
+
+	</div>
+
+<% end %>
+<!-- Media Content https://s.gravatar.com/avatar/43659c454c961b4f92329a230dc97d58?s=80 -->
+
+<!-- CONDITIONAL STATEMENT if there is no content -->
+ <% if @questions.empty? %>
+ 	<div class="alert alert-info">Let's show the world that we are little curious kids and is ready to ask more questions. </div>
+ <% end %>

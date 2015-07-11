@@ -1,0 +1,61 @@
+<div class ="modal fade" id="new-question-modal" tabindex = -1>
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title"> New Question </h4>
+			</div>
+			<!-- Header, &times represents the X button --> 
+
+
+<!-- Inside Form for Email and Passwords --> 
+<!-- form class="form-horizontal" action="/questions" method="POST"-->
+<!-- %= form_for :question, url: 'questions/', html: { class: 'form-horizontal' } do % -->
+<%= form_for :question, url: '/questions', html: {class: 'form-horizontal'} do %>
+	<div class="modal-body"-->
+
+	<!-- The new content is about turning the form into an action --> 
+	  <div class="form-group">
+	    <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
+	    <div class="col-sm-10">
+	      <input type="email" name="question[email]" value="<%= current_user_email %>" class="form-control" id="inputEmail" placeholder="Email" required>	
+	    </div>
+	  <!-- id has to be inputEmail and not inputEmail3 -->
+	  </div>
+	 <div class="form-group">
+	    <label for="inputAnswer" class="col-sm-2 control-label">Body</label>
+	    <div class="col-sm-10">
+	      <textarea class="form-control" name="question[body]" id="inputAnswer" placeholder="Input your Question here." required></textarea>
+	    </div>
+	  </div>
+
+
+  		<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				<button type="submit" class="btn btn-primary">Submit </button>
+		</div>
+	<!-- button squeeze in --> 
+	</div>
+<% end %>
+
+<!--/form -->
+
+<!-- Inside Form for Email and Passwords --> 
+
+<!-- Form for Passwords
+
+
+	  <div class="form-group">
+	    <label for="inputPassword3" class="col-sm-2 control-label">Body</label>
+
+	    <div class="col-sm-10">
+	      <input type="password" name="question[body]" class="form-control" id="inputPassword3" placeholder="Password">
+	    </div>
+	  </div>  
+--> 
+
+
+			
+		</div>
+	</div>
+</div> 
